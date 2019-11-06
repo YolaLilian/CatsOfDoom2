@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Cats Of Doom 2
+                    Laravel
                 </div>
 
                 <div class="links">
