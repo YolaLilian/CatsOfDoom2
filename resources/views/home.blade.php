@@ -3,10 +3,18 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-3 p-5"> <img src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle">
+        <div class="col-3 p-10"> 
+            <img src="https://cat-bounce.com/catbounce.png" class="rounded-circle">
         </div>
-        <div class="col-9">
-        <div><h1>Hier komt de gebruikersnaam...</h1></div>
+        <div class="col-9 pt-5">
+            <div><h1>{{ $user->username }}</h1></div>
+            <div class="d-flex">
+                <div class="pr-5"><strong>12</strong> posts</div>
+                <div class="pr-5"><strong>12</strong> posts</div>
+                <div class="pr-5"><strong>12</strong> posts</div>
+            </div>
+            <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
+            <div>{{ $user->profile->description }}</div>
         </div>
     </div>
 </div>
