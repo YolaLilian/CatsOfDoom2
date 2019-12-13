@@ -3,9 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Post;
 
 class PostsController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
+    public function index() {
+        $posts = Post::all();
+        return view('posts/index', compact('posts'));
+    }
     public function create()
     {
         return view('posts/create');
@@ -17,8 +27,13 @@ class PostsController extends Controller
             'caption' => 'required',
             'image' => ['required', 'image']
         ]);
-
-
-        dd(request()->all());
+        
+        $imagePath = (request('image')->store('uploads', 'public'));
+        Post::create([
+            'caption'=> $data['caption'],
+            'image' => $imagePath 
+        ]);
+        // Post::create($data)->toSql();
+        return redirect()->route('posts.index');
     }
 }
