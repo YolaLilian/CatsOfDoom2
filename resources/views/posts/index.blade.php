@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,18 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    
-    @foreach ($posts as $post)
-        <div class="row pt-5">
-            {{$post->caption}}
-            <img src="/storage/{{ $post->image }}">
-        </div>
-    
-    
-    
-    {{-- {{$post->caption}}
-        {{$post->image}} --}}
-    @endforeach
+
 
 </body>
-</html>
+</html> --}}
+
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row">
+        @foreach ($posts as $post)
+            {{$post->caption}}
+            <img src="/storage/{{ $post->image }}"class="w-100">
+        @endforeach
+    </div>
+</div>
+@endsection
