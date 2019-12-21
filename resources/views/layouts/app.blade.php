@@ -61,6 +61,9 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{route('posts.index')}}">
+                                        Catto Pics
+                                    </a>
 
                                     {{-- <a class="dropdown-item" href="{{route('posts.create')}}">
                                         Post toevoegen
