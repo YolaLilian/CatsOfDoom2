@@ -26,10 +26,29 @@ class ProfilesController extends Controller
         return view('profiles.show', compact('user', 'id'));
     }
 
-    public function destroy($id)
-    {
+    public function edit($id) {
         $user = User::find($id);
-        // dd($user);
+        return view('profiles.edit', compact('user', 'id'));
+    }
+
+    public function update(Request $request) {
+        $this->validate($request, [
+            'first_name'            => 'required',
+            'last_name'             => 'required',
+            'username'              => 'required'
+        ]);
+        $user = User::find($id);
+          $user->first_name         = $request->get('first_name');  
+          $user->last_name          = $request->get('last_name');
+          $user->username           = $request->get('username');
+          $user->save();
+        return redirect()->route('profiles.{user}')->with('success', 'Data saved!');
+    }
+
+
+
+    public function destroy($id) {
+        $user = User::find($id);
         $user->destroy($id);
         return redirect()->route('profiles.index')->with('success', 'Data deleted!');
     }

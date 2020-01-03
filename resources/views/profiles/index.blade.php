@@ -20,8 +20,8 @@
                             <td>{{ $user->username }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
-                                <form method="post" class="delete_form" action="profiles/{{ $user->id}}">
-                                    <button type="submit" class="btn btn-danger">Delete {{$user->id}}</button>
+                                <form method="post" action="profiles/{{ $user->id}}">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
                                     @method('delete')
                                     @csrf
                                 </form>
