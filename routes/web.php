@@ -19,7 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/p/create', 'PostsController@create')->name('posts.create'); 
-Route::get('/p/{post}', 'PostsController@show'); 
-Route::get('/p', 'PostsController@index')->name('posts.index');
-Route::post('/p', 'PostsController@store'); 
+Route::get('/post/create', 'PostsController@create')->name('posts.create'); 
+Route::get('/post/{post}', 'PostsController@show'); 
+Route::get('/post', 'PostsController@index')->name('posts.index');
+Route::post('/post', 'PostsController@store'); 
+
+Route::get('/profiles/{user}', 'ProfilesController@show')->name('profiles.show');
+Route::get('/profiles', 'ProfilesController@index')->name('profiles.index');
+Route::delete('/profiles/{user}', 'ProfilesController@destroy');
+
