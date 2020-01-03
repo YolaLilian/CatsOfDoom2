@@ -60,7 +60,7 @@
                                         Catto Pics
                                     </a>
                                     <a class="dropdown-item" href="{{route('posts.create')}}">
-                                        Add new Image
+                                        Add new Cat of Doom Pic
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
