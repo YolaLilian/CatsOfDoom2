@@ -10,6 +10,8 @@
             <h2>{{ $post->caption}}</h2>
             <p>{{ $post->tags->name}}<p>
         </div>
+        <div class="col-4 pt-2 font-weight-bold">
+            <a href="/post">Go back to all Catto pics!</a>
     </div>
 </div>
 @endsection
