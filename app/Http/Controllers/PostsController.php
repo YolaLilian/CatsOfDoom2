@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Post;
+use \App\Tags;
 use Intervention\Image\Facades\Image;
 
 class PostsController extends Controller
@@ -14,8 +15,9 @@ class PostsController extends Controller
     }
 
     public function index() {
-        $posts = Post::all();
-        return view('posts/index', compact('posts'));
+        // $posts = Post::all();
+        $posts = Post::with('tags')->get();
+        return view('posts/index', compact('posts', 'tags'));
     }
     public function create()
     {
@@ -26,7 +28,8 @@ class PostsController extends Controller
     {
         $data = request()->validate([
             'caption' => 'required',
-            'image' => ['required', 'image']
+            'image' => ['required', 'image'],
+            'tags_id' => 'required'
         ]);
         
         $imagePath = (request('image')->store('uploads', 'public'));
@@ -36,7 +39,8 @@ class PostsController extends Controller
 
         Post::create([
             'caption'=> $data['caption'],
-            'image' => $imagePath 
+            'image' => $imagePath,
+            'tags_id' => $data['tags_id']
         ]);
         // Post::create($data)->toSql();
         return redirect()->route('posts.index');

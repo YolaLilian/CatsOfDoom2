@@ -21,7 +21,7 @@
                             <td>{{ $user->email }}</td>
                             <td>
                                 <form method="post" action="profiles/{{ $user->id}}">
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
                                     @method('delete')
                                     @csrf
                                 </form>

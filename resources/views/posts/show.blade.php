@@ -8,6 +8,7 @@
         </div>
         <div class="col-4 pt-2">
             <h2>{{ $post->caption}}</h2>
+            <p>{{ $post->tags->name}}<p>
         </div>
     </div>
 </div>

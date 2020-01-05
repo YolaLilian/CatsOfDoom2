@@ -22,20 +22,20 @@
                         <td>{{ $user->last_name }}</td>
                         <td>{{ $user->username }}</td>
                         <td>{{ $user->email }}</td>
-                        {{-- <td>
+                        <td>
                             <form method="post" action="profiles/{{ $user->id}}">
-                                <button type="submit" class="btn btn-warning">Edit</button>
+                                <button type="submit" class="btn btn-outline-info btn-sm">Edit</button>
                                 @method('')
                                 @csrf
                             </form>
                         </td>
                         <td>
                             <form method="post" action="/{{ $user->id}}">
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
                                 @method('delete')
                                 @csrf
                             </form>
-                        </td> --}}
+                        </td>
                     </tr>
                 </tbody>
             </table>
