@@ -22,7 +22,7 @@ class ProfilesController extends Controller
         //     'user' => $user,
         // ]);
 
-        $user = User::find($id);
+        $user = User::findOrFail($id);
         return view('profiles.show', compact('user', 'id'));
     }
 

@@ -9,7 +9,7 @@
             <div class="col-8 offset-2">
 
             <div class="row">
-                <h1>Nieuwe Post Toevoegen</h1>
+                <h1>Add new Catto Pic</h1>
             </div>
 
             <div class="form-group row">
@@ -60,10 +60,7 @@
                     </select><br>
             
                     @error('tags_id')
-                    <span class="invalid-feedback"               
-                        role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
+                        <strong>The tag is required.</strong>
                     @enderror
                 </div>
             </div>
