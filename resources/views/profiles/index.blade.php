@@ -25,6 +25,10 @@
                                     @method('delete')
                                     @csrf
                                 </form>
+                                <form method="post" action="profiles/{{ $user->id}}/edit">
+                                    <button type="submit" class="btn btn-outline-warning btn-sm">Edit</button>
+                                    @csrf
+                                </form>
                             </td>
                         </tr>
                     @endforeach

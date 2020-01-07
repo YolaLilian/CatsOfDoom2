@@ -51,7 +51,7 @@
             <div class="form-group row">
                 <label for="tags_id" class="col-md-4 col-form-label">{{ ('Image tags') }}</label>
                 <div class="col-md-6">
-                    <select name="tags_id" id="tags_id">
+                    <select class="custom-select" name="tags_id" id="tags_id">
                         <option value="" selected="" disabled="" hidden="">Select tag...</option>
                         <option value="1">Eating</option>
                         <option value="2">Sleeping</option>

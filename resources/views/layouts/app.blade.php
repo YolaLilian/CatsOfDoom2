@@ -62,16 +62,14 @@
                                     <a class="dropdown-item" href="{{route('posts.create')}}">
                                         Add new Cat of Doom Pic
                                     </a>
+                                    <a class="dropdown-item" href="profiles/{{Auth::user()->id}}/edit">
+                                        Edit your profile
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
-                                    {{-- <a class="dropdown-item" href="{{route('posts.create')}}">
-                                        Post toevoegen
-                                    </a> --}}
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

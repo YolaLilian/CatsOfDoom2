@@ -9,7 +9,6 @@ use Intervention\Image\Facades\Image;
 
 class PostsController extends Controller
 {
-
     public function __construct() {
         $this->middleware('auth');
     }
@@ -34,7 +33,7 @@ class PostsController extends Controller
         
         $imagePath = (request('image')->store('uploads', 'public'));
 
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 600);
         $image->save();
 
         Post::create([
