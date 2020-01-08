@@ -3,9 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        {{-- <div class="col-8">
-            
-        </div> --}}
+        @if(auth()->user()->id==$user->id)   
         <div class="col-4 pt-2">
             <table class="table">
                 <thead>
@@ -22,24 +20,14 @@
                         <td>{{ $user->last_name }}</td>
                         <td>{{ $user->username }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>
-                            <form method="post" action="profiles/{{ $user->id}}">
-                                <button type="submit" class="btn btn-outline-info btn-sm">Edit</button>
-                                @method('')
-                                @csrf
-                            </form>
-                        </td>
-                        <td>
-                            <form method="post" action="/{{ $user->id}}">
-                                <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
-                                @method('delete')
-                                @csrf
-                            </form>
+                        <td><a href="/profiles/{{ Auth::user()->id}}/edit">Edit</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        @else <h3>The catto said no.</h3>
+        @endif
     </div>   
 </div>
 @endsection

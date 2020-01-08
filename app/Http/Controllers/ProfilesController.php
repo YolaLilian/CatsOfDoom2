@@ -12,44 +12,49 @@ class ProfilesController extends Controller
     }
 
     public function index() {
-        // return view('index');
-        // $users = User::all();
-        // return view('profiles/index', compact('profiles'));
+
+        // if(auth()->user()->role_id !==1) {
+        //     return back()->withError("The Cats said NO.");
+        // }
 
         $users = User::all();
         return view('profiles.index')->with('users', $users);
     }
 
     public function show($id) {
-        // $user = User::find($user);
-        // return view('show', [
-        //     'user' => $user,
-        // ]);
-
         $user = User::findOrFail($id);
+
+        if(auth()->user()->id !==$user->id) {
+            return redirect('/nope');
+        }
+
         return view('profiles.show', compact('user', 'id'));
     }
 
     public function edit($id) {
         $user = User::find($id);
+        if(auth()->user()->id !==$user->id) {
+            return redirect('/nope');
+        }
+
         return view('profiles.edit', compact('user', 'id'));
     }
 
-    public function update(Request $request) {
-        $this->validate($request, [
-            'first_name'            => 'required',
-            'last_name'             => 'required',
-            'username'              => 'required'
-        ]);
+    public function update($id) {
         $user = User::find($id);
-          $user->first_name         = $request->get('first_name');  
-          $user->last_name          = $request->get('last_name');
-          $user->username           = $request->get('username');
-          $user->save();
-        return redirect()->route('profiles.{user}')->with('success', 'Data saved!');
+        if(auth()->user()->id !==$user->id) {
+            return redirect('/nope');
+        }
+        
+        $data = request()->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'username' => 'required'
+        ]);
+        
+        auth()->user()->update($data);
+        return redirect("profiles/{$user->id}");
     }
-
-
 
     public function destroy($id) {
         $user = User::find($id);

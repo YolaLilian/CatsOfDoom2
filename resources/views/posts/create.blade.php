@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    @if(auth()->user()->role_id==1)
     <form action="/post" enctype="multipart/form-data" method="post">
         @csrf
 
@@ -66,9 +67,11 @@
             </div>
 
             <div class="row pt-3">
-                <button class="btn btn-outline-primary">Voeg Post toe</button>
+                <button class="btn btn-outline-warning">Add post</button>
             </div>
         </div>
     </form>
+    @else <h3>The catto said no.</h3>
+    @endif
 </div>
 @endsection

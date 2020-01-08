@@ -20,11 +20,19 @@ class PostsController extends Controller
     }
     public function create()
     {
+        if(auth()->user()->role_id !==1) {
+            return redirect('/nope');
+        }
+
         return view('posts/create');
     }
 
     public function store() 
     {
+        if(auth()->user()->role_id !==1) {
+            return redirect('/nope');
+        }
+
         $data = request()->validate([
             'caption' => 'required',
             'image' => ['required', 'image'],
