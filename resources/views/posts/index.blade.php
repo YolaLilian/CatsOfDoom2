@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="justify-content-center">
-        <p><strong>{{ $posts->count()}} </strong> posts</p>
+        <div><strong>{{ $posts->count()}} </strong> posts</div>
     </div>
     <div class="row pt-5">
         @foreach($posts as $post)
@@ -17,7 +17,7 @@
                 <a href="/post/{{ $post->id }}">
                     <img src="/storage/{{ $post->image }}" class="w-100">
                 </a>
-            <like-button post-id="{{ $post->id }}"></like-button>
+            <like-button post-id="{{ $post->id }}" likes="{{ $likes }}"></like-button>
             </div>
         @endforeach
         {{-- <a href="{{action('ProfilesController@edit', $user['id'])}}">Edit your profile</a> --}}

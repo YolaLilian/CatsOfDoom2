@@ -12,6 +12,8 @@
                         <th>Last name</th>
                         <th>Username</th>
                         <th>Email</th>
+                        <th>Amount of likes given</th>
+                        <th>Edit account info</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,6 +22,7 @@
                         <td>{{ $user->last_name }}</td>
                         <td>{{ $user->username }}</td>
                         <td>{{ $user->email }}</td>
+                        <td>{{ $user->likes->count()}}</td>
                         <td><a href="/profiles/{{ Auth::user()->id}}/edit">Edit</a>
                         </td>
                     </tr>
