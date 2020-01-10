@@ -1845,12 +1845,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['postId'],
   mounted: function mounted() {
     console.log('Component mounted.');
   },
   methods: {
     likePost: function likePost() {
-      axios.post('/like/1').then(function (response) {
+      axios.post('/like/' + this.postId).then(function (response) {
         alert(response.data);
       });
     }

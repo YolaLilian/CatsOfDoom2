@@ -17,7 +17,7 @@
                 <a href="/post/{{ $post->id }}">
                     <img src="/storage/{{ $post->image }}" class="w-100">
                 </a>
-                <like-button></like-button>
+            <like-button post-id="{{ $post->id }}"></like-button>
             </div>
         @endforeach
         {{-- <a href="{{action('ProfilesController@edit', $user['id'])}}">Edit your profile</a> --}}

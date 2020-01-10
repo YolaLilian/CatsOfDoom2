@@ -21,9 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::Get('/nope', 'NopeController@index')->name('nope');
 
-Route::post('like/{post}', function () {
-    return ['success!'];
-});
+Route::post('like/{post}', 'LikesController@store');
 
 Route::get('/post', 'PostsController@index')->name('posts.index');
 Route::get('/post/create', 'PostsController@create')->name('posts.create'); 
