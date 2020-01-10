@@ -1850,7 +1850,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     likePost: function likePost() {
-      alert("MEOW!");
+      axios.post('/like/1').then(function (response) {
+        alert(response.data);
+      });
     }
   }
 });

@@ -12,7 +12,10 @@
 
         methods: {
             likePost() {
-                alert("MEOW!")
+                axios.post('/like/1')
+                .then(response => {
+                    alert(response.data);
+                })
             }
         }
     }
