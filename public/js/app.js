@@ -1847,6 +1847,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
+  },
+  methods: {
+    likePost: function likePost() {
+      alert("MEOW!");
+    }
   }
 });
 
@@ -37158,20 +37163,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c(
+      "button",
+      { staticClass: "btn btn-outline-dark mt-2", on: { click: _vm.likePost } },
+      [_vm._v("Like")]
+    )
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("button", { staticClass: "btn btn-outline-dark mt-2" }, [
-        _vm._v("Like")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
