@@ -13,4 +13,9 @@ class Post extends Model
     protected $fillable = [
         'caption', 'image', 'tags_id'
     ];
+
+    public function liked() 
+    {
+       return $this->belongsToMany(User::class); 
+    }
 }    
