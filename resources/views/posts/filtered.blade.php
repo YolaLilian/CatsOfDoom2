@@ -4,7 +4,6 @@
 <div class="container">
     <div class="justify-content-center">
         <div><strong>{{ $posts->count()}} </strong> posts</div>
-
         <form action="/post/filtered" method="post">
             @csrf
 
@@ -39,7 +38,6 @@
             <like-button post-id="{{ $post->id }}" likes="{{ $likes }}"></like-button>
             </div>
         @endforeach
-        {{-- <a href="{{action('ProfilesController@edit', $user['id'])}}">Edit your profile</a> --}}
     </div>
 </div>
 @endsection
