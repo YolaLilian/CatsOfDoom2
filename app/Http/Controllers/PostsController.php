@@ -17,10 +17,9 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(\App\User $user) 
+    public function index(\App\User $user, \App\Post $post) 
     {
-        $likes = (auth()->user()) ? auth()->user()->likes->contains($user) : false;
-        
+        $likes = (auth()->user()) ? auth()->user()->likes->contains($post->id) : false;
         $posts = Post::with('tags')->get();
 
         return view('posts/index', compact('posts', 'tags', 'likes'));
@@ -75,8 +74,7 @@ class PostsController extends Controller
         $chosenfilter = $data['tags_id'];
 
         $posts = Post::with('tags')->get()->where('tags_id', $data['tags_id']);
-        
-        //  dd($data);
+    
         return view('posts.filtered', compact('posts', 'tags', 'likes'));
     }
 
