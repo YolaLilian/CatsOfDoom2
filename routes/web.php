@@ -25,6 +25,7 @@ Route::post('like/{post}', 'LikesController@store');
 
 Route::get('/post', 'PostsController@index')->name('posts.index');
 Route::post('/post/filtered', 'PostsController@filter')->name('posts.filtered');
+Route::get('post/searched', 'PostsController@search')->name('posts.searched');
 Route::get('/post/create', 'PostsController@create')->name('posts.create'); 
 Route::post('/post', 'PostsController@store'); 
 Route::get('/post/{post}', 'PostsController@show'); 

@@ -7,7 +7,18 @@
             <div class="justify-content-center">
                 <div><strong>{{ $posts->count()}} </strong> posts</div>
                 
-
+                <form action="/post/searched" method="get">
+                    <div class="form-group row">
+                        <label for="search" class="col-md-4 col-form-label">{{ ('Search:') }}</label>
+                        <div class="col-md-6">
+                            <input type="search" name="search" class="form-control">
+                        </div>
+                        <span class="form-group-btn">
+                            <button type="submit" class="btn btn-outline-info">Search!</button>
+                        </span>
+                    </div>
+                </form>
+                
                 <form action="/post/filtered" method="post">
                     @csrf
 

@@ -73,9 +73,19 @@ class PostsController extends Controller
 
         $chosenfilter = $data['tags_id'];
 
-        $posts = Post::with('tags')->get()->where('tags_id', $data['tags_id']);
+        $posts = Post::with('tags')->get()->where('tags_id', $chosenfilter);
     
         return view('posts.filtered', compact('posts', 'tags', 'likes'));
+    }
+
+    public function search(Request $request, \App\User $user) 
+    {
+        $likes = (auth()->user()) ? auth()->user()->likes->contains($user) : false;
+
+        $search = $request->get('search');
+        $posts = Post::with('tags')->where('caption', 'LIKE', '%'.$search.'%')->get();
+
+        return view('posts.searched', compact('posts', 'tags', 'likes', 'search'));
     }
 
     public function show(\App\Post $post)
