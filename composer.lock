@@ -2393,6 +2393,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -2407,6 +2408,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> cb9775de209b61717e10e8167401107f5a1d1dd5
             "time": "2020-03-30T14:07:33+00:00"
         },
         {
@@ -2515,6 +2518,7 @@
         },
         {
             "name": "symfony/mime",
+<<<<<<< HEAD
             "version": "v5.0.7",
             "source": {
                 "type": "git",
@@ -2525,6 +2529,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/mime/zipball/481b7d6da88922fb1e0d86a943987722b08f3955",
                 "reference": "481b7d6da88922fb1e0d86a943987722b08f3955",
+=======
+            "version": "v4.4.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/mime.git",
+                "reference": "6dde9dc70155e91b850b1d009d1f841c54bc4aba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/6dde9dc70155e91b850b1d009d1f841c54bc4aba",
+                "reference": "6dde9dc70155e91b850b1d009d1f841c54bc4aba",
+>>>>>>> cb9775de209b61717e10e8167401107f5a1d1dd5
                 "shasum": ""
             },
             "require": {
@@ -2573,6 +2589,7 @@
                 "mime",
                 "mime-type"
             ],
+<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -2588,6 +2605,9 @@
                 }
             ],
             "time": "2020-03-27T16:56:45+00:00"
+=======
+            "time": "2020-03-27T16:54:36+00:00"
+>>>>>>> cb9775de209b61717e10e8167401107f5a1d1dd5
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2794,6 +2814,7 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -2808,6 +2829,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> cb9775de209b61717e10e8167401107f5a1d1dd5
             "time": "2020-03-09T19:04:49+00:00"
         },
         {
@@ -2867,6 +2890,7 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -2881,6 +2905,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> cb9775de209b61717e10e8167401107f5a1d1dd5
             "time": "2020-03-09T19:04:49+00:00"
         },
         {
@@ -2936,6 +2962,7 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -2950,6 +2977,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> cb9775de209b61717e10e8167401107f5a1d1dd5
             "time": "2020-02-27T09:26:54+00:00"
         },
         {
