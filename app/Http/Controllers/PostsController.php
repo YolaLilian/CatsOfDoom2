@@ -22,7 +22,7 @@ class PostsController extends Controller
         $likes = (auth()->user()) ? auth()->user()->likes->contains($post->id) : false;
         $posts = Post::with('tags')->get();
 
-        return view('posts/index', compact('posts', 'tags', 'likes'));
+        return view('posts/index', compact('posts', 'likes'));
     }
 
     
